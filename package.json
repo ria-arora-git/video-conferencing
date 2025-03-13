@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.12.5",
+    "@clerk/themes": "^2.2.21",
     "@radix-ui/react-dialog": "^1.1.6",
+    "@stream-io/video-react-sdk": "^1.12.8",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.476.0",
