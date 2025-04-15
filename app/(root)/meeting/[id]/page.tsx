@@ -2,17 +2,24 @@
 
 import MeetingRoom from '@/components/MeetingRoom';
 import MeetingSetup from '@/components/MeetingSetup';
+import { useGetCallbyID } from '@/hooks/useGetCallById';
 import { useUser } from '@clerk/nextjs';
 import { StreamCall, StreamTheme } from '@stream-io/video-react-sdk';
-import React, { useState } from 'react'
+import { Loader } from 'lucide-react';
+import React, { use, useState } from 'react'
 
-const Meeting = ({ params, }: { params: { id: string }}) => {
+
+
+const Meeting = ({ params }: { params: { id: string }}) => {
+  const { id } = use(params);
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false);
+  const {call, isCallLoading} = useGetCallbyID(id);
 
+  if(!isLoaded || isCallLoading) return <Loader/>
   return (
     <main className='h-screen w-full'>
-      <StreamCall>
+      <StreamCall call={call}>
         <StreamTheme>
           {!isSetupComplete ? (
             <MeetingSetup/> 
