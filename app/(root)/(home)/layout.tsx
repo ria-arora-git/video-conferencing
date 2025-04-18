@@ -1,6 +1,15 @@
 import Navbar from '@/components/navbar'
 import Sidebar from '@/components/sidebar'
+import { Metadata } from 'next';
 import React, { ReactNode } from 'react'
+
+export const metadata: Metadata = {
+   title: "Reunivo",
+   description: "App for virtual meetings",
+   icons: {
+     icon: "/icons/favicon.png"
+   },
+ };
 
 const HomeLayout = ({children}:{children:ReactNode}) => {
   return (
