@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import { useState } from 'react';
 import {
@@ -31,7 +32,6 @@ type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right';
 
 const MeetingRoom = () => {
   const searchParams = useSearchParams();
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isPersonalRoom = !!searchParams.get('personal');
   const router = useRouter();
   const [layout, setLayout] = useState<CallLayoutType>('speaker-left');

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import MeetingRoom from '@/components/MeetingRoom';
@@ -12,7 +13,6 @@ import React, { use, useState } from 'react'
 
 const Meeting = ({ params }: { params: { id: string }}) => {
   const { id } = use(params);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { user, isLoaded } = useUser();
   const [isSetupComplete, setIsSetupComplete] = useState(false);
   const {call, isCallLoading} = useGetCallById(id);
