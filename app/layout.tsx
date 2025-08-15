@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner"
 import "@stream-io/video-react-sdk/dist/css/styles.css";
+import { Analytics } from "@vercel/analytics/next"
 
 
 const geistSans = Geist({
@@ -40,6 +41,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} bg-dark-2 antialiased` }
       >
         {children}
+        <Analytics />
         <Toaster />
       </body>
       </ClerkProvider>
